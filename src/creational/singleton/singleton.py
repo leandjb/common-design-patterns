@@ -1,0 +1,11 @@
+class Singleton:
+    _instances = {}
+
+    def __new__(cls, *args, **kwargs):
+        """
+        Creates and returns a new instance of the Singleton class.
+        """
+
+        if cls not in cls._instances:
+            cls._instances[cls] = super().__new__(cls)
+        return cls._instances[cls]
